@@ -1,10 +1,10 @@
-import generateRuntimeData from "../generateRuntimeData.mjs"
+import generateRuntimeInitData from "../generateRuntimeInitData.mjs"
 
 import pluginResolveIdFactory from "./pluginResolveIdFactory.mjs"
 import pluginLoadFactory from "./pluginLoadFactory.mjs"
 
 export default async function(project_root) {
-	const static_runtime_data = await generateRuntimeData(
+	const static_runtime_data = await generateRuntimeInitData(
 		project_root, null
 	)
 

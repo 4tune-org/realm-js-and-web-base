@@ -1,4 +1,4 @@
-import generateRuntimeData from "../generateRuntimeData.mjs"
+import generateRuntimeInitData from "../generateRuntimeInitData.mjs"
 
 import pluginResolveIdFactory from "./pluginResolveIdFactory.mjs"
 import pluginLoadFactory from "./pluginLoadFactory.mjs"
@@ -8,7 +8,7 @@ import resourcesPlugin from "./resources.mjs"
 export default async function(project_root) {
 	const resources_rollup_plugin = await resourcesPlugin(project_root)
 
-	const runtime_data = await generateRuntimeData(
+	const runtime_data = await generateRuntimeInitData(
 		project_root, resources_rollup_plugin
 	)
 
