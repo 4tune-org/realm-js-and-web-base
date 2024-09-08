@@ -7,7 +7,7 @@ export function initializeRuntime(
 		resources: project_resources,
 
 		getRuntimeVersion() {
-			return `0.0.0`
+			return runtime_init_data.runtime_version
 		},
 
 		loadProjectPackageJSON() {
