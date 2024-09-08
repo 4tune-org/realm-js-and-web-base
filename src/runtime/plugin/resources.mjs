@@ -8,8 +8,12 @@ export default async function(project_root) {
 		project_root, null
 	)
 
+	const ctx = {
+		runtime_init_data
+	}
+
 	const resolveId = await pluginResolveIdFactory()
-	const load = await pluginLoadFactory(runtime_init_data, true)
+	const load = await pluginLoadFactory(ctx, true)
 
 	return function fortuneStaticRuntimePlugin() {
 		return {
