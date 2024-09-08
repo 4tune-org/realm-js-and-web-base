@@ -11,7 +11,7 @@ export default async function(project_root) {
 	const resolveId = await pluginResolveIdFactory()
 	const load = await pluginLoadFactory(static_runtime_data, true)
 
-	return function fortuneRuntimePlugin() {
+	return function fortuneStaticRuntimePlugin() {
 		return {
 			name: "rollup-plugin-fortune-static-runtime",
 			resolveId,
