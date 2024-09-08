@@ -14,6 +14,10 @@ export default async function(ctx, use_static_runtime) {
 
 	const load_resources_fn_name = use_static_runtime ? "loadStaticResource" : "loadResource"
 
+	//
+	// this is implemented this way to allow loadResource/loadStaticResource
+	// to be tree shaked (i.e. removing resources from output file)
+	//
 	virtual_module += `
 export function ${load_resources_fn_name}(url) {
 	if (runtime.resources === null) {
