@@ -1,7 +1,10 @@
 import createRuntimeGlueCode from "../createRuntimeGlueCode.mjs"
 
 export default async function(ctx, use_static_runtime) {
-	const {runtime_init_data} = ctx
+	const {
+		runtime_init_data,
+		project_resources
+	} = ctx
 
 	let virtual_module = ``
 
