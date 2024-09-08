@@ -4,6 +4,15 @@ import loadBuildDependencies from "../loadBuildDependencies.mjs"
 import findProjectResources from "./findProjectResources.mjs"
 import bundleResourceWithRollup from "./bundleResourceWithRollup.mjs"
 
+//
+// Generates the project's resources located at <project-root>/resources/<type>/
+// where <type> is either "esmodule", "blob" or "text"
+//
+// Esmodule resources are allowed to import other resources.
+// However, they cannot import other esmodule resources.
+// Setting the parameter "rollup_plugin" to null makes this function
+// not invoke rollup for esmodules.
+//
 export default async function(project_root, rollup_plugin) {
 	const {getDependency} = await loadBuildDependencies(project_root)
 
