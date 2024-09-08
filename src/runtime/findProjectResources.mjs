@@ -1,10 +1,21 @@
 import path from "node:path"
+import fs from "node:fs/promises"
 import readdir from "../util/readdir.mjs"
 
 export default async function(project_root) {
-	const entries = await readdir(
-		path.join(project_root, "resources")
-	)
+	const resources_path = path.join(project_root, "resources")
+
+	try {
+		const stat = await fs.stat(resources_path)
+
+		if (!stat.isDirectory()) {
+			throw new Error()
+		}
+	} catch (error) {
+		return []
+	}
+
+	const entries = await readdir(resources_path)
 
 	return entries.map(({relative_path}) => {
 		if (relative_path.startsWith("esmodule/")) {
