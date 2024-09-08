@@ -4,21 +4,17 @@ import buildVirtualModuleCode from "../buildVirtualModuleCode.mjs"
 import pluginResolveIdFactory from "./pluginResolveIdFactory.mjs"
 import pluginLoadFactory from "./pluginLoadFactory.mjs"
 
-import resourcesPlugin from "./resources.mjs"
-
 export default async function(project_root) {
-	const resources_rollup_plugin = await resourcesPlugin(project_root)
-
-	const runtime_data = await generateRuntimeData(
-		project_root, resources_rollup_plugin
+	const static_runtime_data = await generateRuntimeData(
+		project_root, null
 	)
 
 	const resolveId = await pluginResolveIdFactory()
-	const load = await pluginLoadFactory(runtime_data, false)
+	const load = await pluginLoadFactory(static_runtime_data, true)
 
 	return function fortuneRuntimePlugin() {
 		return {
-			name: "rollup-plugin-fortune-runtime",
+			name: "rollup-plugin-fortune-static-runtime",
 			resolveId,
 			load
 		}
