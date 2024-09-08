@@ -45,7 +45,7 @@ export default async function(project_root) {
 				}
 
 				return await buildVirtualModuleCode(
-					project_root, runtime_data, use_static_runtime
+					runtime_data, use_static_runtime
 				)
 			}
 		}

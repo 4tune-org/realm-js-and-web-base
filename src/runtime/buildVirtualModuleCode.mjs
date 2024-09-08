@@ -1,4 +1,4 @@
-export default async function(project_root, runtime_data, use_static_runtime) {
+export default async function(runtime_data, use_static_runtime) {
 	let virtual_module = ``
 
 	virtual_module  = `const runtime_data = ` + JSON.stringify(runtime_data, null, 4) + ";\n"
