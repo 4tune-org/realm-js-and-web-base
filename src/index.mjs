@@ -1,7 +1,7 @@
 import loadBuildDependencies_impl from "./loadBuildDependencies.mjs"
 import searchForConfigFile_impl from "./searchForConfigFile.mjs"
 import generateRuntimeData_impl from "./runtime/generateRuntimeData.mjs"
-import rollupPlugin_impl from "./runtime/rollup-plugin.mjs"
+import rollupPlugin_impl from "./runtime/plugin/main.mjs"
 
 export const loadBuildDependencies = loadBuildDependencies_impl
 export const searchForConfigFile = searchForConfigFile_impl

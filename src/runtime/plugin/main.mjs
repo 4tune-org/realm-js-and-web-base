@@ -1,5 +1,5 @@
-import generateRuntimeData from "./generateRuntimeData.mjs"
-import buildVirtualModuleCode from "./buildVirtualModuleCode.mjs"
+import generateRuntimeData from "../generateRuntimeData.mjs"
+import buildVirtualModuleCode from "../buildVirtualModuleCode.mjs"
 
 import {fileURLToPath} from "node:url"
 import path from "node:path"
@@ -26,7 +26,7 @@ export default async function(project_root) {
 
 				if (id === `@4tune-poc/js-runtime`) {
 					return path.join(
-						__dirname, "implementation", "index.mjs"
+						__dirname, "..", "implementation", "index.mjs"
 					)
 				}
 
