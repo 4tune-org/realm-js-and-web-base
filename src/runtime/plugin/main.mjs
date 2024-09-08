@@ -1,5 +1,4 @@
 import generateRuntimeData from "../generateRuntimeData.mjs"
-import buildVirtualModuleCode from "../buildVirtualModuleCode.mjs"
 
 import pluginResolveIdFactory from "./pluginResolveIdFactory.mjs"
 import pluginLoadFactory from "./pluginLoadFactory.mjs"
