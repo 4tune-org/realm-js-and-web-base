@@ -8,12 +8,12 @@ import resourcesPlugin from "./resources.mjs"
 export default async function(project_root) {
 	const resources_rollup_plugin = await resourcesPlugin(project_root)
 
-	const runtime_data = await generateRuntimeInitData(
+	const runtime_init_data = await generateRuntimeInitData(
 		project_root, resources_rollup_plugin
 	)
 
 	const resolveId = await pluginResolveIdFactory()
-	const load = await pluginLoadFactory(runtime_data, false)
+	const load = await pluginLoadFactory(runtime_init_data, false)
 
 	return function fortuneRuntimePlugin() {
 		return {
