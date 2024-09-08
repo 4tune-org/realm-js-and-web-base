@@ -1,5 +1,7 @@
 export function initializeRuntimeFromData(runtime_init_data) {
 	return {
+		resources: null,
+
 		loadProjectPackageJSON() {
 			return JSON.parse(JSON.stringify(runtime_init_data.package_json))
 		},
