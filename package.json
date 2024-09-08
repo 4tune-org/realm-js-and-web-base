@@ -10,6 +10,7 @@
   },
   "exports": {
     ".": "./src/index.mjs",
+    "./package.json": "./package.json",
     "./runtime": "./src/runtime/implementation/index.mjs",
     "./runtime/createRuntimeGlueCode": "./src/runtime/createRuntimeGlueCode.mjs",
     "./install": "./install.mjs"
