@@ -10,6 +10,10 @@ export function initializeRuntime(
 			return JSON.parse(JSON.stringify(runtime_init_data.package_json))
 		},
 
+		loadFortuneConfiguration() {
+			return JSON.parse(JSON.stringify(runtime_init_data.fortune_config))
+		},
+
 		loadResourceDynamic(url) {
 			if (url === null) return
 
