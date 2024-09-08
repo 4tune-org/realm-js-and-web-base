@@ -39,6 +39,10 @@ export function initializeRuntime(
 			}
 
 			throw new Error(`Unable to locate resource ${type}://${path}.`)
+		},
+
+		createDefaultContext() {
+			return {}
 		}
 	}
 
