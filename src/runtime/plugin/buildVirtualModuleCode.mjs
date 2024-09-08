@@ -20,7 +20,8 @@ export function ${load_resources_fn_name}(url) {
 		runtime.resources = ${JSON.stringify(project_resources)};
 	}
 
-	return runtime.resources
+	// defer to the dynamic runtime to load the resource
+	return runtime.loadResourceDynamic(url)
 }
 `
 

@@ -1,3 +1,5 @@
+import parseResourceURL from "./parseResourceURL.mjs"
+
 export function initializeRuntime(
 	runtime_init_data, project_resources = null
 ) {
@@ -8,8 +10,17 @@ export function initializeRuntime(
 			return JSON.parse(JSON.stringify(runtime_init_data.package_json))
 		},
 
-		loadResource(url) {
-			console.log("load resource", runtime.resources)
+		loadResourceDynamic(url) {
+			const {type, path} = parseResourceURL(url)
+
+			for (const resource of runtime.resources) {
+				if (resource.type !== type) continue
+				if (resource.path !== path) continue
+
+				return resource.data
+			}
+
+			throw new Error(`Unable to locate resource ${type}://${path}.`)
 		}
 	}
 
