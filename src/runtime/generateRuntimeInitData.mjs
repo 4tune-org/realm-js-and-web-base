@@ -1,4 +1,3 @@
-import generateProjectResources from "./generateProjectResources.mjs"
 import path from "node:path"
 import fs from "node:fs/promises"
 
@@ -15,12 +14,10 @@ async function loadProjectPackageJSON(project_root) {
 //
 //    - The project's package.json contents (retrievable via loadProjectPackageJSON)
 //
-export default async function(project_root, rollup_plugin) {
+export default async function(project_root) {
 	const package_json = await loadProjectPackageJSON(project_root)
-	const resources = await generateProjectResources(project_root, rollup_plugin)
 
 	return {
-		package_json,
-		resources
+		package_json
 	}
 }
