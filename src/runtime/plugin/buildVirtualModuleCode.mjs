@@ -9,8 +9,8 @@ export default async function(ctx, use_static_runtime) {
 	let virtual_module = ``
 
 	virtual_module  = `const runtime_init_data = ` + JSON.stringify(runtime_init_data, null, 4) + ";\n"
-	virtual_module += `import {initializeRuntimeFromInitData} from "@4tune-poc/js-runtime"\n`
-	virtual_module += `const runtime = initializeRuntimeFromInitData(runtime_init_data);\n`
+	virtual_module += `import {initializeRuntime} from "@4tune-poc/js-runtime"\n`
+	virtual_module += `const runtime = initializeRuntime(runtime_init_data);\n`
 
 	const load_resources_fn_name = use_static_runtime ? "loadStaticResource" : "loadResource"
 

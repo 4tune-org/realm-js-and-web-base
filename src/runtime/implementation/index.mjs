@@ -1,4 +1,4 @@
-export function initializeRuntimeFromInitData(
+export function initializeRuntime(
 	runtime_init_data, project_resources = null
 ) {
 	const runtime = {
