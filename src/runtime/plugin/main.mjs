@@ -19,11 +19,15 @@ export default async function(project_root) {
 	const resolveId = await pluginResolveIdFactory()
 	const load = await pluginLoadFactory(ctx, false)
 
-	return function fortuneRuntimePlugin() {
-		return {
-			name: "rollup-plugin-fortune-runtime",
-			resolveId,
-			load
+	return {
+		ctx,
+
+		plugin() {
+			return {
+				name: "rollup-plugin-fortune-runtime",
+				resolveId,
+				load
+			}
 		}
 	}
 }
