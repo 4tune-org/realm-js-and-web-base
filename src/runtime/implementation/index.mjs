@@ -1,4 +1,4 @@
-export function initializeRuntimeFromData(runtime_init_data) {
+export function initializeRuntimeFromInitData(runtime_init_data) {
 	return {
 		resources: null,
 
