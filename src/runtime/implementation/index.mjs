@@ -6,6 +6,10 @@ export function initializeRuntime(
 	const runtime = {
 		resources: project_resources,
 
+		getRuntimeVersion() {
+			return `0.0.0`
+		},
+
 		loadProjectPackageJSON() {
 			return JSON.parse(JSON.stringify(runtime_init_data.package_json))
 		},
