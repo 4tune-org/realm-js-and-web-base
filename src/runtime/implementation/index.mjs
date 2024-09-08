@@ -1,9 +1,11 @@
 export function initializeRuntimeFromData(runtime_data) {
-	console.log("initializeRuntimeFromData", runtime_data)
-
 	return {
-		loadResource() {
-			console.log("load resource")
+		loadProjectPackageJSON() {
+			return JSON.parse(JSON.stringify(runtime_data.package_json))
+		},
+
+		loadResource(url) {
+			console.log("load resource", runtime_data.resources)
 		}
 	}
 }
