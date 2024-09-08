@@ -11,6 +11,7 @@
   "exports": {
     ".": "./src/index.mjs",
     "./runtime": "./src/runtime/implementation/index.mjs",
+    "./runtime/createRuntimeGlueCode": "./src/runtime/createRuntimeGlueCode.mjs",
     "./install": "./install.mjs"
   }
 }
