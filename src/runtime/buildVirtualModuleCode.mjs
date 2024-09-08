@@ -1,3 +1,5 @@
+import createRuntimeGlueCode from "./createRuntimeGlueCode.mjs"
+
 export default async function(runtime_data, use_static_runtime) {
 	let virtual_module = ``
 
@@ -5,24 +7,7 @@ export default async function(runtime_data, use_static_runtime) {
 	virtual_module += `import {initializeRuntimeFromData} from "@4tune-poc/js-runtime"\n`
 	virtual_module += `const runtime = initializeRuntimeFromData(runtime_data);\n`
 
-	let runtime_methods = [
-		"getRuntimeVersion",
-		"loadStaticResource",
-		"loadResource",
-		"loadProjectPackageJSON",
-		"loadFortuneConfiguration",
-		"createDefaultContext"
-	]
-
-	if (use_static_runtime) {
-		runtime_methods = runtime_methods.filter(method => method !== "loadResource")
-	} else {
-		runtime_methods = runtime_methods.filter(method => method !== "loadStaticResource")
-	}
-
-	for (const method of runtime_methods) {
-		virtual_module += `export function ${method}(...args) { return runtime.${method}(...args); }\n`
-	}
+	virtual_module += createRuntimeGlueCode(use_static_runtime, "runtime")
 
 	return virtual_module
 }
