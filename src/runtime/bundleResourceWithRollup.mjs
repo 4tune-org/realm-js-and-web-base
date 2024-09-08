@@ -17,7 +17,7 @@ export default async function(
 			//inlineDynamicImports: true
 		},
 
-		plugins: [rollup_plugin(true), rollupResolveNode()]
+		plugins: [rollup_plugin({resource_path}), rollupResolveNode()]
 	}
 
 	// needed for rollup-node-resolve plugin
