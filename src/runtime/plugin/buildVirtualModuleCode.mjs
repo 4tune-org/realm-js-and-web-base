@@ -1,4 +1,4 @@
-import createRuntimeGlueCode from "./createRuntimeGlueCode.mjs"
+import createRuntimeGlueCode from "../createRuntimeGlueCode.mjs"
 
 export default async function(runtime_data, use_static_runtime) {
 	let virtual_module = ``
