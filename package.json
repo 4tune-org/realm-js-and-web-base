@@ -11,8 +11,11 @@
   "exports": {
     ".": "./src/index.mjs",
     "./package.json": "./package.json",
-    "./runtime": "./src/runtime/implementation/index.mjs",
+    "./runtime": "./src/runtime/runtime.mjs",
     "./runtime/createRuntimeGlueCode": "./src/runtime/createRuntimeGlueCode.mjs",
     "./install": "./install.mjs"
+  },
+  "dependencies": {
+    "@4tune-poc/js-and-web-runtime": "^0.0.2"
   }
 }

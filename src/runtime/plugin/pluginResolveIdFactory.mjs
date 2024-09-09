@@ -1,8 +1,10 @@
 import {fileURLToPath} from "node:url"
 import path from "node:path"
+import {createRequire} from "node:module"
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
+const require = createRequire(__filename)
 
 export default function() {
 	return async function(id) {
@@ -16,9 +18,7 @@ export default function() {
 		}
 
 		if (id === `@4tune-poc/js-runtime`) {
-			return path.join(
-				__dirname, "..", "implementation", "index.mjs"
-			)
+			return require.resolve("@4tune-poc/js-and-web-runtime")
 		}
 
 		return null // other ids should be handled as usually
