@@ -12,6 +12,7 @@
     ".": "./src/index.mjs",
     "./package.json": "./package.json",
     "./runtime": "./node_modules/@4tune-poc/js-and-web-runtime/dist/runtime.mjs",
+    "./runtime/types": "./node_modules/@4tune-poc/js-and-web-runtime/index.d.ts",
     "./runtime/createRuntimeGlueCode": "./src/runtime/createRuntimeGlueCode.mjs",
     "./install": "./install.mjs"
   },
