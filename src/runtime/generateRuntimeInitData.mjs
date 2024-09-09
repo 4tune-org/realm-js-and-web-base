@@ -29,6 +29,7 @@ async function loadPackageJSON(project_root) {
 // Generates the runtime init data needed.
 // This includes:
 //
+//.   - Contents of fortune.config.mjs.
 //    - The project's package.json contents (retrievable via loadProjectPackageJSON)
 //
 export default async function(project_root) {
