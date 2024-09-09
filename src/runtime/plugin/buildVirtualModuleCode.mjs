@@ -19,7 +19,7 @@ export default async function(ctx, use_static_runtime) {
 	// to be tree shaked (i.e. removing resources from output file)
 	//
 	virtual_module += `
-function ${load_resources_fn_name}_impl(url) {
+const ${load_resources_fn_name}_impl = function ${load_resources_fn_name}(url) {
 	if (runtime.resources === null) {
 		runtime.resources = ${JSON.stringify(project_resources)};
 	}
