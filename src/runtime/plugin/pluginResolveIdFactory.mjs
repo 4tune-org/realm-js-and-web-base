@@ -9,16 +9,16 @@ const require = createRequire(__filename)
 export default function() {
 	return async function(id) {
 		if (
-			id === `@4tune-poc/realm-js` ||
-			id === `@4tune-poc/realm-web`
+			id === `@4tune/realm-js` ||
+			id === `@4tune/realm-web`
 		) {
 			// this signals that Rollup should not ask other plugins or check
 			// the file system to find this id
 			return `\0${id}`
 		}
 
-		if (id === `@4tune-poc/js-runtime`) {
-			return require.resolve("@4tune-poc/js-and-web-runtime")
+		if (id === `@4tune/js-runtime`) {
+			return require.resolve("@4tune/js-and-web-runtime")
 		}
 
 		return null // other ids should be handled as usually
