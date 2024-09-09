@@ -12,7 +12,7 @@
     ".": "./src/index.mjs",
     "./package.json": "./package.json",
     "./runtime": "./src/runtime/runtime.mjs",
-    "./runtime/types": "./src/runtime/runtime_typings.d.ts",
+    "./runtime/types": "./src/runtime/runtime_typings.mjs",
     "./runtime/createRuntimeGlueCode": "./src/runtime/createRuntimeGlueCode.mjs",
     "./install": "./install.mjs"
   },
