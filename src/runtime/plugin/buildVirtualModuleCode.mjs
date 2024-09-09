@@ -19,14 +19,23 @@ export default async function(ctx, use_static_runtime) {
 	// to be tree shaked (i.e. removing resources from output file)
 	//
 	virtual_module += `
-export function ${load_resources_fn_name}(url) {
+function ${load_resources_fn_name}_impl(url) {
 	if (runtime.resources === null) {
 		runtime.resources = ${JSON.stringify(project_resources)};
 	}
 
 	// defer to the dynamic runtime to load the resource
-	return runtime.loadResourceDynamic(url)
+	return runtime.loadResourceDynamic(url, false)
 }
+
+${load_resources_fn_name}_impl.asURL = function ${load_resources_fn_name}AsURL(url) {
+	// make sure resources are loaded
+	${load_resources_fn_name}_impl(null);
+
+	return runtime.loadResourceDynamic(url, true)
+}
+
+export const ${load_resources_fn_name} = ${load_resources_fn_name}_impl;
 `
 
 	virtual_module += createRuntimeGlueCode(use_static_runtime, "runtime")
