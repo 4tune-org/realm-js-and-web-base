@@ -16,8 +16,8 @@ export default async function(project_root) {
 		project_resources
 	}
 
-	const resolveId = await pluginResolveIdFactory()
-	const load = await pluginLoadFactory(ctx, false)
+	const resolveId = pluginResolveIdFactory()
+	const load = pluginLoadFactory(ctx, false)
 
 	return {
 		ctx,

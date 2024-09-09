@@ -13,7 +13,7 @@ export default async function(project_root) {
 		project_resources
 	}
 
-	const resolveId = await pluginResolveIdFactory()
+	const resolveId = pluginResolveIdFactory()
 
 	return function fortuneStaticRuntimePlugin({resource_path}) {
 		const {fortune_config} = ctx.runtime_init_data.fortune_config
@@ -22,7 +22,7 @@ export default async function(project_root) {
 			name: "rollup-plugin-fortune-static-runtime",
 			resolveId,
 			async load(id) {
-				let load = await pluginLoadFactory(ctx, true)
+				let load = pluginLoadFactory(ctx, true)
 
 				return await load(id)
 			}
