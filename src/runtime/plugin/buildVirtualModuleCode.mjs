@@ -12,7 +12,8 @@ export default async function(ctx, use_static_runtime) {
 	virtual_module += `import {initializeRuntime} from "@4tune-poc/js-runtime"\n`
 	virtual_module += `const runtime = initializeRuntime(runtime_init_data);\n`
 
-	const load_resources_fn_name = use_static_runtime ? "loadStaticResource" : "loadResource"
+	const load_resources_fn_name = "loadResource"
+	//use_static_runtime ? "loadStaticResource" : "loadResource"
 
 	//
 	// this is implemented this way to allow loadResource/loadStaticResource
