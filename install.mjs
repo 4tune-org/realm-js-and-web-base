@@ -17,6 +17,12 @@ const base_dependencies = {
 		"15.2.3",
 		`import plugin from "@rollup/plugin-node-resolve"\n` +
 		`export default plugin`
+	],
+
+	"rollup-plugin-dts": [
+		"6.1.1",
+		`import {dts} from "rollup-plugin-dts"\n` +
+		`export default dts`
 	]
 }
 
