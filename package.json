@@ -17,6 +17,6 @@
     "./install": "./install.mjs"
   },
   "dependencies": {
-    "@4tune/js-and-web-runtime": "0.6.0"
+    "@4tune/js-and-web-runtime": "0.7.1"
   }
 }

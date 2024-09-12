@@ -1,4 +1,4 @@
-import createRuntimeGlueCode from "../createRuntimeGlueCode.mjs"
+import createRuntimeGlueCode from "@4tune/js-and-web-runtime/createRuntimeGlueCode"
 
 export default async function(ctx, use_static_runtime) {
 	const {
@@ -39,7 +39,7 @@ ${load_resources_fn_name}_impl.asURL = function ${load_resources_fn_name}AsURL(u
 export const ${load_resources_fn_name} = ${load_resources_fn_name}_impl;
 `
 
-	virtual_module += createRuntimeGlueCode(use_static_runtime, "runtime")
+	virtual_module += createRuntimeGlueCode("runtime")
 
 	return virtual_module
 }
